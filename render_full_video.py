@@ -172,14 +172,14 @@ def setup_camera():
 def add_lighting():
     """Add lighting for sphere rendering (EXACT same as sphere_optimized_script.py)."""
     # Add sun light
-    bpy.ops.object.light_add(type='SUN', location=(10, -10, 20))
+    bpy.ops.object.light_add(type='SUN', location=CAMERA_POS)
     sun_light = bpy.context.object
     sun_light.name = 'SunLight'
     sun_light.data.energy = 3.0
     sun_light.data.color = (1.0, 0.95, 0.8)  # Warm light
     
     # Add fill light
-    bpy.ops.object.light_add(type='AREA', location=(-5, 5, 10))
+    bpy.ops.object.light_add(type='AREA', location=CAMERA_POS)
     area_light = bpy.context.object
     area_light.name = 'AreaLight'
     area_light.data.energy = 1000
